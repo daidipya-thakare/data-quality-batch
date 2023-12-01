@@ -1,0 +1,3 @@
+entity_prop_id,entity_id,entity_prop_key,entity_prop_value,created_by,created_date,updated_by,updated_date
+68337369,89919999,PATH,gs://data-comparator-demo/data/payments/payment_source.csv,sys,11/2/2023 11:28:53,sys,11/2/2023 11:28:53
+45794364,84531273,PATH,gs://data-comparator-demo/data/payments/Payment_target_data.csv,sys,11/2/2023 11:28:53,sys,11/2/2023 11:28:53

@@ -1,0 +1,2 @@
+ruleset_id,ruleset_name,ruleset_desc,notification_email,created_by,created_date,updated_by,updated_date
+16853437,dq.bank.account.payments,"Ruleset to verify data quality of bank, accounts and payments data",abc@xyz.com,sys,11/2/2023 11:25:04,sys,11/2/2023 11:25:04
