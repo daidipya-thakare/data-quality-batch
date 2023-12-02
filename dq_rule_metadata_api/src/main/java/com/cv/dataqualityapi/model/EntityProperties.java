@@ -1,6 +1,5 @@
 package com.cv.dataqualityapi.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Setter
@@ -20,37 +18,37 @@ public class EntityProperties {
 
 	@Id
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty(notes = "Entity Id", example = "1", required = true)
+	@ApiModelProperty(notes = "Entity Id", example = "68337369", required = true)
 	@Column(name = "entity_prop_id")
-	private Integer entitypropId;
+	private Integer entityPropId;
 
-	@ApiModelProperty(notes = "Entity Id", example = "1", required = true)
+	@ApiModelProperty(notes = "entity_prop_key", example = "PATH")
+	@Column(name = "entity_prop_key")
+	private String entityPropKey;
+
+	@ApiModelProperty(notes = "entity_prop_value", example = "data/payments/payment_source.csv")
+	@Column(name = "entity_prop_value")
+	private String entityPropValue;
+
+	@ApiModelProperty(notes = "Entity Id", example = "89919999", required = true)
 	@Column(name = "entity_id")
 	private Integer EntityId;
 
-	@ApiModelProperty(notes = "entity_prop_key", example = "Source")
-	@Column(name = "entity_prop_key")
-	private String entitypropKey;
-
-	@ApiModelProperty(notes = "entity_prop_value", example = "Source")
-	@Column(name = "entity_prop_value")
-	private String entitypropValue;
-
-	@ApiModelProperty(notes = "created_by", example = "CSV")
+	@ApiModelProperty(notes = "created_by", example = "System")
 	@Column(name = "created_by")
-	private String entitypropCreatedBy;
+	private String entityPropCreatedBy;
 
-	@ApiModelProperty(notes = "updated_by", example = "FILE")
+	@ApiModelProperty(notes = "updated_by", example = "System")
 	@Column(name = "updated_by")
-	private String entitypropUpdatedBy;
+	private String entityPropUpdatedBy;
 
-	@ApiModelProperty(notes = "created_date", example = "CSV")
+	@ApiModelProperty(notes = "created_date", example = "2023-02-11 11:25:04")
 	@Column(name = "created_date")
-	private String entitypropCreatedDate;
+	private String entityPropCreatedDate;
 
-	@ApiModelProperty(notes = "updated_date", example = "CSV")
+	@ApiModelProperty(notes = "updated_date", example = "2023-02-11 11:25:04")
 	@Column(name = "updated_date")
-	private String entitypropUpdatedDate;
+	private String entityPropUpdatedDate;
 
 	@ManyToOne()
 	@JoinColumn(name = "entity_id", insertable = false, updatable = false)

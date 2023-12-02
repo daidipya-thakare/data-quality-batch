@@ -4,16 +4,11 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-//@NamedQueries({
-//		@NamedQuery(name = "RuleSet.getRuleSetByRuleSetName", query = "SELECT rs from RuleSet rs where upper(rs.rulesetName) = upper(:rulesetName)"),
-//		@NamedQuery(name = "RuleSet.getRuleSetCount", query = "SELECT rs from RuleSet rs where upper(rs.rulesetName) = upper(:rulesetName) and upper(rs.rulesetDesc) = upper(:rulesetDesc)") })
 
 @Getter
 @Setter
@@ -26,29 +21,29 @@ public class RuleSet {
 
 	@Id
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "rule_set_id")
-	private Integer rulesetId;
+	@Column(name = "ruleset_id")
+	private Integer rulesetid1;
 
-	@Column(name = "rule_set_name", nullable = false, length = 100)
-	private String rulesetName;
+	@Column(name = "ruleset_name", nullable = false)
+	private String rulesetname;
 
-	@Column(name = "rule_set_desc", nullable = false, length = 200)
-	private String rulesetDesc;
+	@Column(name = "ruleset_desc", nullable = false)
+	private String rulesetdesc;
 
-	@Column(name = "notification_email", nullable = false, length = 200)
-	private String rulesetNotificationEmail;
+	@Column(name = "notification_email", nullable = false)
+	private String ruleSetNotificationEmail;
 
-	@Column(name = "created_by", nullable = false, length = 200)
-	private String rulesetCreatedBy;
+	@Column(name = "created_by", nullable = false)
+	private String ruleSetCreatedBy;
 
-	@Column(name = "created_date", nullable = false, length = 200)
-	private String rulesetCreatedDate;
+	@Column(name = "created_date", nullable = false)
+	private String ruleSetCreatedDate;
 
-	@Column(name = "updated_by", nullable = false, length = 200)
-	private String rulesetUpdatedBy;
+	@Column(name = "updated_by", nullable = false)
+	private String ruleSetUpdatedBy;
 
-	@Column(name = "updated_date", nullable = false, length = 200)
-	private String rulesetUpdatedDate;
+	@Column(name = "updated_date", nullable = false)
+	private String ruleSetUpdatedDate;
 
 	@OneToMany(mappedBy = "ruleSet",fetch = FetchType.LAZY)
 	private Set<Rules> rules;

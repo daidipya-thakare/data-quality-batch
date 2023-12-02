@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository
 public interface RuleSetRepo extends JpaRepository<RuleSet,Integer> {
 
-   Optional<RuleSet> findByRulesetName(String rulesetName);
+   Optional<RuleSet> findByRulesetname(String rulesetName);
 }

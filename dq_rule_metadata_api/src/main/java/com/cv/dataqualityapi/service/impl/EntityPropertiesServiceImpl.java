@@ -1,7 +1,6 @@
 package com.cv.dataqualityapi.service.impl;
 
 import com.cv.dataqualityapi.Repo.EntityPropertiesRepo;
-import com.cv.dataqualityapi.model.Entities;
 import com.cv.dataqualityapi.model.EntityProperties;
 import com.cv.dataqualityapi.service.EntityPropertiesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class EntityPropertiesServiceImpl implements EntityPropertiesService {
     }
 
     public EntityProperties getEntityPropbyId(int id){
-        return (EntityProperties) entityPropertiesRepo.findByEntitypropId(id).orElse(null);
+        return (EntityProperties) entityPropertiesRepo.findByEntityPropId(id).orElse(null);
 
     }
 

@@ -1,6 +1,5 @@
 package com.cv.dataqualityapi.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Setter
 @Getter
@@ -20,49 +18,49 @@ public class RuleTemplateProperties {
 
     @Id
    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(notes = "rule_template_prop_id", example = "1", required = true)
-    @Column(name = "rule_template_prop_id",nullable = false, length = 200)
-    private Integer ruletemplatepropertiesId;
+    @ApiModelProperty(notes = "rule_template_prop_id", example = "95430871", required = true)
+    @Column(name = "rule_template_prop_id",nullable = false)
+    private Integer ruleTemplatePropertiesId;
 
     @Column(name = "rule_template_id")
     @ApiModelProperty(notes = "rule_template_id")
-    private Integer ruletemplateId;
+    private Integer ruleTemplateId;
 
-    @ApiModelProperty(notes = "rule_template_prop_key", example = "1", required = true)
-    @Column(name = "rule_template_prop_key",nullable = false, length = 200)
-    private String ruletemplatepropertiesKey;
+    @ApiModelProperty(notes = "rule_template_prop_key", example = "BASE_CRITERIA", required = true)
+    @Column(name = "rule_template_prop_key",nullable = false)
+    private String ruleTemplatePropertiesKey;
 
-    @ApiModelProperty(notes = "rule_template_prop_type", example = "1", required = true)
-    @Column(name = "rule_template_prop_type",nullable = false, length = 200)
-    private String ruletemplatepropertiesType;
+    @ApiModelProperty(notes = "rule_template_prop_type", example = "PREDEFINED", required = true)
+    @Column(name = "rule_template_prop_type",nullable = false)
+    private String ruleTemplatePropertiesType;
 
-    @ApiModelProperty(notes = "rule_template_prop_value", example = "1", required = true)
-    @Column(name = "rule_template_prop_value",nullable = false, length = 200)
-    private String ruletemplatepropertiesValue;
+    @ApiModelProperty(notes = "rule_template_prop_value", example = "round({BASE_CRITERIA_COLUMN}) <> {BASE_CRITERIA_COLUMN}", required = true)
+    @Column(name = "rule_template_prop_value",nullable = false)
+    private String ruleTemplatePropertiesValue;
 
-    @ApiModelProperty(notes = "rule_template_prop_desc", example = "1", required = true)
-    @Column(name = "rule_template_prop_desc",nullable = false, length = 200)
-    private String ruletemplatepropertiesDesc;
+    @ApiModelProperty(notes = "rule_template_prop_desc", example = "Condition to be applied on the column", required = true)
+    @Column(name = "rule_template_prop_desc",nullable = false)
+    private String ruleTemplatePropertiesDesc;
 
-    @ApiModelProperty(notes = "is_mandatory", example = "CSV")
+    @ApiModelProperty(notes = "is_mandatory", example = "True")
     @Column(name = "is_mandatory")
-    private String ruletemplatepropertiesIsMandatory;
+    private String ruleTemplatePropertiesIsMandatory;
 
-    @ApiModelProperty(notes = "created_by", example = "CSV")
+    @ApiModelProperty(notes = "created_by", example = "System")
     @Column(name = "created_by")
-    private String ruletemplatepropertiesCreatedBy;
+    private String ruleTemplatePropertiesCreatedBy;
 
-    @ApiModelProperty(notes = "updated_by", example = "FILE")
+    @ApiModelProperty(notes = "updated_by", example = "System")
     @Column(name = "updated_by")
-    private String ruletemplatepropertiesUpdatedBy;
+    private String ruleTemplatePropertiesUpdatedBy;
 
-    @ApiModelProperty(notes = "created_date", example = "CSV")
+    @ApiModelProperty(notes = "created_date", example = "2023-04-18 14:20:20.785")
     @Column(name = "created_date")
-    private String ruletemplatepropertiesCreatedDate;
+    private String ruleTemplatePropertiesCreatedDate;
 
-    @ApiModelProperty(notes = "updated_date", example = "CSV")
+    @ApiModelProperty(notes = "updated_date", example = "2023-04-18 14:20:20.785")
     @Column(name = "updated_date")
-    private String ruletemplatepropertiesUpdatedDate;
+    private String ruleTemplatePropertiesUpdatedDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("rule_template_id")

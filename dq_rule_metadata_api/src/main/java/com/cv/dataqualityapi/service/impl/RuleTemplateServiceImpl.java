@@ -23,7 +23,7 @@ public class RuleTemplateServiceImpl implements RuleTemplateService {
     }
 
     public RuleTemplate getRuleTemplateByName(String Name){
-        return (RuleTemplate) ruleTemplateRepo.findByRuletemplateName(Name).orElse(null);
+        return (RuleTemplate) ruleTemplateRepo.findByRuleTemplateName(Name).orElse(null);
     }
 
     public RuleTemplate saveAllRuleTemplate(List<RuleTemplate> ruleTemplates){

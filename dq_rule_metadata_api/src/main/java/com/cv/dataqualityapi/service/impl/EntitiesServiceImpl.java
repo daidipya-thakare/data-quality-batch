@@ -17,8 +17,8 @@ public class EntitiesServiceImpl implements EntitiesService {
         return (Entities) entityRepo.saveAll(entities);
     }
 
-    public Entities saveEntity(Entities entity){
-        return entityRepo.save(entity);
+    public Entities saveEntity(Entities entities){
+        return entityRepo.save(entities);
     }
 
     public Entities getEntities(){

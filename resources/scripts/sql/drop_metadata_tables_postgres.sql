@@ -9,3 +9,5 @@ drop table  entity_template_properties;
 drop table  entity_template;
 drop table  rule_template_properties;
 drop table  rule_template;
+drop table  rule;
+drop table  ruleset;

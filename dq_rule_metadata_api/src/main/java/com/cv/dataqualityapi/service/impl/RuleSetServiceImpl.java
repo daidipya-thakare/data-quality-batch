@@ -32,7 +32,7 @@ public class RuleSetServiceImpl implements RulesSetService {
     }
 
     public Optional<RuleSet> getRuleSetByName(String name){
-        return ruleSetRepository.findByRulesetName(name);
+        return ruleSetRepository.findByRulesetname(name);
     }
 
     public String deleteRuleSet(int id){
@@ -41,11 +41,11 @@ public class RuleSetServiceImpl implements RulesSetService {
     }
 
     public RuleSet updateRuleSet(RuleSet ruleSet){
-        RuleSet existingRuleSet = ruleSetRepository.findById(ruleSet.getRulesetId()).orElse(null);
-        existingRuleSet.setRulesetName(ruleSet.getRulesetName());
+        RuleSet existingRuleSet = ruleSetRepository.findById(ruleSet.getRulesetid1()).orElse(null);
+        existingRuleSet.setRulesetname(ruleSet.getRulesetname());
         //existingRuleSet.getRulesetDesc(ruleSet.getRulesetDesc());
-        existingRuleSet.setRulesetUpdatedBy(ruleSet.getRulesetUpdatedBy());
-        existingRuleSet.setRulesetUpdatedDate(ruleSet.getRulesetUpdatedDate());
+        existingRuleSet.setRuleSetUpdatedBy(ruleSet.getRuleSetUpdatedBy());
+        existingRuleSet.setRuleSetUpdatedDate(ruleSet.getRuleSetUpdatedDate());
         return ruleSetRepository.save(existingRuleSet);
     }
 }
