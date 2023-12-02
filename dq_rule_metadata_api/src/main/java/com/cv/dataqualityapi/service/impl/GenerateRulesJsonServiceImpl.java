@@ -96,7 +96,7 @@ public class GenerateRulesJsonServiceImpl implements GenerateRulesJsonService {
 				entityAssociationsDto.setPrimary_key(ruleMap.getEntities().getEntityPrimaryKey());
 				entityAssociationsDto.setIs_primary("TRUE");
 				entityAssociationsDto.setProperties(entityPropList);
-				entityAssociationsDto.setAll_entity_properties(entityTemplatePropList);
+				entityAssociationsDto.setEntity_properties(entityTemplatePropList);
 
 				dataEntityAssociationsList.add(entityAssociationsDto);
 			});
