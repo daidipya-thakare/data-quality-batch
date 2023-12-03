@@ -33,5 +33,5 @@ public class DataEntityAssociations {
 
 	private List<EntityPropertiesDto> properties;
 
-	private List<EntityTemplatePropertiesDto> entity_properties;
+	private List<EntityTemplatePropertiesDto> entity_template_properties;
 }

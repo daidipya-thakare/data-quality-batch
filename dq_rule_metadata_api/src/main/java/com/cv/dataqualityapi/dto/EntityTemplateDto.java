@@ -5,15 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class EntityTemplatePropertiesDto {
+public class EntityTemplateDto {
 
-    private String entityTemplatePropDesc;
-    private String entityTemplatePropType;
-    private String entityTemplatePropKey;
-    private String isMandatory;
+    private String entityTemplateType;
+    private Integer entityTemplateId;
+    private String entityTemplateSubType;
+    private List<EntityTemplatePropertiesDto> entityTemplateProperties;
 
 }

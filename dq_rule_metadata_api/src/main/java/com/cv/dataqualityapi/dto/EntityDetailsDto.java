@@ -9,17 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class EntityDetailsDto {
 
-	private String behaviour;
-
 	private String type;
-
 	private String subType;
-
-	private String tableName;
-
-	private String location;
-
-	private String description;
-
+	private String entityName;
+	private String entityPhysicalName;
 	private String primaryKey;
+
 }

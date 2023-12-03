@@ -1,6 +1,6 @@
 package com.cv.dataqualityapi.service.impl;
 
-import com.cv.dataqualityapi.Repo.RuleTemplatePropertiesRepo;
+import com.cv.dataqualityapi.repository.RuleTemplatePropertiesRepo;
 import com.cv.dataqualityapi.model.RuleTemplateProperties;
 import com.cv.dataqualityapi.service.RuleTemplatePropertiesService;
 import org.springframework.beans.factory.annotation.Autowired;

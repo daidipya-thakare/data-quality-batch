@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.cv.dataqualityapi.Repo.*;
+import com.cv.dataqualityapi.repository.*;
 import com.cv.dataqualityapi.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -96,7 +96,7 @@ public class GenerateRulesJsonServiceImpl implements GenerateRulesJsonService {
 				entityAssociationsDto.setPrimary_key(ruleMap.getEntities().getEntityPrimaryKey());
 				entityAssociationsDto.setIs_primary("TRUE");
 				entityAssociationsDto.setProperties(entityPropList);
-				entityAssociationsDto.setEntity_properties(entityTemplatePropList);
+				entityAssociationsDto.setEntity_template_properties(entityTemplatePropList);
 
 				dataEntityAssociationsList.add(entityAssociationsDto);
 			});

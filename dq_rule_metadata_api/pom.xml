@@ -114,7 +114,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.cv.dataqualityapi.DataqualityapiApplication1</mainClass>
+							<mainClass>com.cv.dataqualityapi.DataqualityapiApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
