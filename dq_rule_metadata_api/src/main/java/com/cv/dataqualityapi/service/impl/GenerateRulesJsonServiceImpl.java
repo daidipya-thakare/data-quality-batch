@@ -5,16 +5,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.cv.dataqualityapi.Repo.*;
+import com.cv.dataqualityapi.repository.*;
 import com.cv.dataqualityapi.dto.*;
-import com.cv.dataqualityapi.model.Entities;
-import com.cv.dataqualityapi.model.RuleEntityMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cv.dataqualityapi.exception.ResourceNotFoundException;
 import com.cv.dataqualityapi.model.RuleSet;
-import com.cv.dataqualityapi.model.Rules;
 import com.cv.dataqualityapi.service.GenerateRulesJsonService;
 
 @Service
@@ -53,7 +50,7 @@ public class GenerateRulesJsonServiceImpl implements GenerateRulesJsonService {
 	@Override
 	public JsonResponseDto generateRulesJson(String rulesetName) {
 
-		Optional<RuleSet> ruleSetOp = ruleSetRepository.findByRulesetName(rulesetName);
+		Optional<RuleSet> ruleSetOp = ruleSetRepository.findByRulesetname(rulesetName);
 		if (! ruleSetOp.isPresent()) {
 			throw new ResourceNotFoundException("rule set not found");
 		}
@@ -73,8 +70,8 @@ public class GenerateRulesJsonServiceImpl implements GenerateRulesJsonService {
 				ruleMap.getEntities().getEntityProp().stream().forEach(entityPro ->
 				{
 					EntityPropertiesDto entityPropListDto = new EntityPropertiesDto();
-					entityPropListDto.setKey(entityPro.getEntitypropKey());
-					entityPropListDto.setValue(entityPro.getEntitypropValue());
+					entityPropListDto.setKey(entityPro.getEntityPropKey());
+					entityPropListDto.setValue(entityPro.getEntityPropValue());
 					entityPropList.add(entityPropListDto);
 				});
 
@@ -82,8 +79,8 @@ public class GenerateRulesJsonServiceImpl implements GenerateRulesJsonService {
 				ruleMap.getEntities().getEntityTemp().getEntityTemProp().stream().forEach(entityTemplateProp ->
 				{
 					EntityTemplatePropertiesDto entityTemplatePropListDto = new EntityTemplatePropertiesDto();
-					entityTemplatePropListDto.setEntityTemplatePropDesc(entityTemplateProp.getEntitytemplatepropDesc());
-					entityTemplatePropListDto.setEntityTemplatePropKey(entityTemplateProp.getEntitytemplatepropKey());
+					entityTemplatePropListDto.setEntityTemplatePropDesc(entityTemplateProp.getEntityTemplatePropDesc());
+					entityTemplatePropListDto.setEntityTemplatePropKey(entityTemplateProp.getEntityTemplatePropKey());
 					entityTemplatePropListDto.setIsMandatory(entityTemplateProp.getIsMandatory());
 
 					entityTemplatePropList.add(entityTemplatePropListDto);
@@ -91,24 +88,24 @@ public class GenerateRulesJsonServiceImpl implements GenerateRulesJsonService {
 
 				DataEntityAssociations entityAssociationsDto = new DataEntityAssociations();
 				entityAssociationsDto.setEntity_id(ruleMap.getEntities().getEntityId());
-				entityAssociationsDto.setEntity_type(ruleMap.getEntities().getEntityTemp().getEntityType());
+				entityAssociationsDto.setEntity_type(ruleMap.getEntities().getEntityTemp().getEntityTemplateType());
 				entityAssociationsDto.setEntity_behaviour(ruleMap.getRuleEntityMapEntityBehaviour());
-				entityAssociationsDto.setEntity_sub_type(ruleMap.getEntities().getEntityTemp().getEntitySubtype());
+				entityAssociationsDto.setEntity_sub_type(ruleMap.getEntities().getEntityTemp().getEntityTemplateSubtype());
 				entityAssociationsDto.setEntity_name(ruleMap.getEntities().getEntityName());
 				entityAssociationsDto.setEntity_physical_name(ruleMap.getEntities().getEntityPhysicalName());
 				entityAssociationsDto.setPrimary_key(ruleMap.getEntities().getEntityPrimaryKey());
 				entityAssociationsDto.setIs_primary("TRUE");
 				entityAssociationsDto.setProperties(entityPropList);
-				entityAssociationsDto.setAll_entity_properties(entityTemplatePropList);
+				entityAssociationsDto.setEntity_template_properties(entityTemplatePropList);
 
 				dataEntityAssociationsList.add(entityAssociationsDto);
 			});
 
 			List<PropertiesDto> propertyDtoList = new ArrayList<>();
-			rule.getRulesprop().stream().forEach(prop -> {
+			rule.getRulesProp().stream().forEach(prop -> {
 				PropertiesDto propDto = new PropertiesDto();
-				propDto.setKey(prop.getRulepropertiesKey());
-				propDto.setValue(prop.getRulepropertiesValue());
+				propDto.setKey(prop.getRulePropertiesKey());
+				propDto.setValue(prop.getRulePropertiesValue());
 				propDto.setType("VARIABLE");
 				propertyDtoList.add(propDto);
 			});
@@ -119,23 +116,23 @@ public class GenerateRulesJsonServiceImpl implements GenerateRulesJsonService {
 			List<RuleTemplatePropertiesDTO> ruleTempPropDtoList = new ArrayList<>();
 			rule.getRuleTemp().getRuleTempProp().stream().forEach(temp -> {
 				RuleTemplatePropertiesDTO ruleTempPropDto = new RuleTemplatePropertiesDTO();
-				ruleTempPropDto.setMandatory(temp.getRuletemplatepropertiesIsMandatory());
-				ruleTempPropDto.setDescription(temp.getRuletemplatepropertiesDesc());
-				ruleTempPropDto.setType(temp.getRuletemplatepropertiesType());
-				ruleTempPropDto.setKey(temp.getRuletemplatepropertiesKey());
+				ruleTempPropDto.setMandatory(temp.getRuleTemplatePropertiesIsMandatory());
+				ruleTempPropDto.setDescription(temp.getRuleTemplatePropertiesDesc());
+				ruleTempPropDto.setType(temp.getRuleTemplatePropertiesType());
+				ruleTempPropDto.setKey(temp.getRuleTemplatePropertiesKey());
 				ruleTempPropDtoList.add(ruleTempPropDto);
 			});
 			RuleTemplateDetailsDTO ruleTemplateDetailsDto = new RuleTemplateDetailsDTO();
-			ruleTemplateDetailsDto.setId(rule.getRuletemplateId());
-			ruleTemplateDetailsDto.setName(rule.getRuleTemp().getRuletemplateName());
-			ruleTemplateDetailsDto.setDescription(rule.getRuleTemp().getRuletemplateDesc());
+			ruleTemplateDetailsDto.setId(rule.getRuleTemplateId());
+			ruleTemplateDetailsDto.setName(rule.getRuleTemp().getRuleTemplateName());
+			ruleTemplateDetailsDto.setDescription(rule.getRuleTemp().getRuleTemplateDesc());
 			ruleTemplateDetailsDto.setTemplateProperties(ruleTempPropDtoList);
 
 			RuleDetailsDto ruleDetailsDto = new RuleDetailsDto();
 			ruleDetailsDto.setId(rule.getRuleId());
 			ruleDetailsDto.setName(rule.getRuleName());
 			ruleDetailsDto.setDescription(rule.getRuleDesc());
-		    ruleDetailsDto.setDq_metric(rule.getRuleTemp().getRuletemplateDqMetric());
+		    ruleDetailsDto.setDq_metric(rule.getRuleTemp().getRuleTemplateDqMetric());
 			ruleDetailsDto.setData_entity_associations(dataEntityAssociationsList);
 			ruleDetailsDto.setProperties(propertyDtoList);
 			ruleDetailsDto.setTemplate(ruleTemplateDetailsDto);
@@ -151,9 +148,9 @@ public class GenerateRulesJsonServiceImpl implements GenerateRulesJsonService {
 		List<String> notificationPreferences = new ArrayList<>();
 		notificationPreferences.add("EMAIL");
 
-		jsonResponse.setRuleset_id(ruleset.getRulesetId());
-		jsonResponse.setRuleset_name(ruleset.getRulesetName());
-		jsonResponse.setRuleset_desc(ruleset.getRulesetDesc());
+		jsonResponse.setRuleset_id(ruleset.getRulesetid1());
+		jsonResponse.setRuleset_name(ruleset.getRulesetname());
+		jsonResponse.setRuleset_desc(ruleset.getRulesetdesc());
 		jsonResponse.setNotification_preference(notificationPreferences);
 		jsonResponse.setRules(rulesJsonDtolist);
 

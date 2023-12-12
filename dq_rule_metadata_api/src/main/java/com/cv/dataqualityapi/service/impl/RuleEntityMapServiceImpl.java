@@ -1,6 +1,6 @@
 package com.cv.dataqualityapi.service.impl;
 
-import com.cv.dataqualityapi.Repo.RuleEntityMapRepo;
+import com.cv.dataqualityapi.repository.RuleEntityMapRepo;
 import com.cv.dataqualityapi.model.RuleEntityMap;
 import com.cv.dataqualityapi.service.RuleEntityMapService;
 import org.springframework.beans.factory.annotation.Autowired;

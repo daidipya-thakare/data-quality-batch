@@ -20,37 +20,37 @@ public class RuleTemplate {
 
     @Id
    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(notes = "rule_template_id", example = "1", required = true)
-    @Column(name = "rule_template_id",nullable = false, length = 200)
-    private Integer ruletemplateId;
+    @ApiModelProperty(notes = "rule_template_id", example = "28946357", required = true)
+    @Column(name = "rule_template_id",nullable = false)
+    private Integer ruleTemplateId;
 
-    @ApiModelProperty(notes = "dq_metric", example = "1", required = true)
-    @Column(name = "dq_metric",nullable = false, length = 200)
-    private String ruletemplateDqMetric;
+    @ApiModelProperty(notes = "dq_metric", example = "VALIDITY", required = true)
+    @Column(name = "dq_metric",nullable = false)
+    private String ruleTemplateDqMetric;
 
-    @ApiModelProperty(notes = "rule_template_name", example = "1", required = true)
-    @Column(name = "rule_template_name",nullable = false, length = 200)
-    private String ruletemplateName;
+    @ApiModelProperty(notes = "rule_template_name", example = "SQL_VALIDATOR", required = true)
+    @Column(name = "rule_template_name",nullable = false)
+    private String ruleTemplateName;
 
-    @ApiModelProperty(notes = "rule_template_desc", example = "1", required = true)
-    @Column(name = "rule_template_desc",nullable = false, length = 200)
-    private String ruletemplateDesc;
+    @ApiModelProperty(notes = "rule_template_desc", example = "Apply sql rule for accuracy metric", required = true)
+    @Column(name = "rule_template_desc",nullable = false)
+    private String ruleTemplateDesc;
 
-    @ApiModelProperty(notes = "created_by", example = "CSV")
+    @ApiModelProperty(notes = "created_by", example = "System")
     @Column(name = "created_by")
-    private String ruletemplateCreatedBy;
+    private String ruleTemplateCreatedBy;
 
-    @ApiModelProperty(notes = "updated_by", example = "FILE")
+    @ApiModelProperty(notes = "updated_by", example = "System")
     @Column(name = "updated_by")
-    private String ruletemplateUpdatedBy;
+    private String ruleTemplateUpdatedBy;
 
-    @ApiModelProperty(notes = "created_date", example = "CSV")
+    @ApiModelProperty(notes = "created_date",  example = "2023-04-18 14:20:20.785")
     @Column(name = "created_date")
-    private String ruletemplateCreatedDate;
+    private String ruleTemplateCreatedDate;
 
-    @ApiModelProperty(notes = "updated_date", example = "CSV")
+    @ApiModelProperty(notes = "updated_date",  example = "2023-04-18 14:20:20.785")
     @Column(name = "updated_date")
-    private String ruletemplateUpdatedDate;
+    private String ruleTemplateUpdatedDate;
 
     @OneToMany(mappedBy = "ruleTemp", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<RuleTemplateProperties> ruleTempProp;

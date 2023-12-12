@@ -1,0 +1,37 @@
+[
+    {
+        "type": "TABLE",
+        "subType": "BIG_QUERY",
+        "entityName": "Bank",
+        "entityPhysicalName": "data_quality_ds.Bank",
+        "primaryKey": "BANKID"
+    },
+    {
+        "type": "TABLE",
+        "subType": "BIG_QUERY",
+        "entityName": "Account",
+        "entityPhysicalName": "data_quality_ds.Account",
+        "primaryKey": "ACCOUNTID"
+    },
+    {
+        "type": "TABLE",
+        "subType": "BIG_QUERY",
+        "entityName": "Payments",
+        "entityPhysicalName": "data_quality_ds.Payments",
+        "primaryKey": "Transaction_Identifier"
+    },
+    {
+        "type": "FILE",
+        "subType": "CSV",
+        "entityName": "payments",
+        "entityPhysicalName": "payments",
+        "primaryKey": "Transaction_Identifier"
+    },
+    {
+        "type": "FILE",
+        "subType": "CSV",
+        "entityName": "payments_target",
+        "entityPhysicalName": "payments_target",
+        "primaryKey": "Transaction_Identifier"
+    }
+]

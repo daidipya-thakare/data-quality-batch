@@ -1,0 +1,6 @@
+entity_id,entity_template_id,entity_name,entity_physical_name,entity_primary_key,created_by,created_date,updated_by,updated_date
+93733590,37504759,Bank,data_quality_ds.Bank,BANKID,sys,11/2/2023 11:28:53,sys,11/2/2023 11:28:53
+62779941,37504759,Account,data_quality_ds.Account,ACCOUNTID,sys,11/2/2023 11:28:53,sys,11/2/2023 11:28:53
+63078398,37504759,Payments,data_quality_ds.Payments,Transaction_Identifier,sys,11/2/2023 11:28:53,sys,11/2/2023 11:28:53
+89919999,77545414,payments,payments,Transaction_Identifier,sys,11/2/2023 11:28:53,sys,11/2/2023 11:28:53
+84531273,77545414,payments_target,payments_target,Transaction_Identifier,sys,11/2/2023 11:28:53,sys,11/2/2023 11:28:53

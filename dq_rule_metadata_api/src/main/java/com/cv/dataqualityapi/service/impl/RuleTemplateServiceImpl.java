@@ -1,6 +1,6 @@
 package com.cv.dataqualityapi.service.impl;
 
-import com.cv.dataqualityapi.Repo.RuleTemplateRepo;
+import com.cv.dataqualityapi.repository.RuleTemplateRepo;
 import com.cv.dataqualityapi.model.RuleTemplate;
 import com.cv.dataqualityapi.service.RuleTemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class RuleTemplateServiceImpl implements RuleTemplateService {
     }
 
     public RuleTemplate getRuleTemplateByName(String Name){
-        return (RuleTemplate) ruleTemplateRepo.findByRuletemplateName(Name).orElse(null);
+        return (RuleTemplate) ruleTemplateRepo.findByRuleTemplateName(Name).orElse(null);
     }
 
     public RuleTemplate saveAllRuleTemplate(List<RuleTemplate> ruleTemplates){

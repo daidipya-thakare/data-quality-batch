@@ -2,7 +2,6 @@ package com.cv.dataqualityapi.model;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,40 +20,40 @@ public class Entities {
 
 	@Id
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty(notes = "Entity Id", example = "1", required = true)
-	@Column(name = "entity_id")
+	@ApiModelProperty(notes = "entity Id", example = "93733590", required = true)
+	@Column(name = "entity_id",nullable = false)
 	private Integer entityId;
 
-	@ApiModelProperty(notes = "entity_template_id", example = "Source")
-	@Column(name = "entity_template_id",nullable = false, length = 200)
-	private Integer entitytemplateId;
-
-	@ApiModelProperty(notes = "entity_physical_name", example = "FILE")
-	@Column(name = "entity_physical_name",nullable = false, length = 200)
+	@ApiModelProperty(notes = "entity_physical_name", example = "data_quality_ds.Account")
+	@Column(name = "entity_physical_name",nullable = false)
 	private String entityPhysicalName;
 
-	@ApiModelProperty(notes = "entity_name", example = "CSV")
-	@Column(name = "entity_name",nullable = false, length = 200)
+	@ApiModelProperty(notes = "entity_name", example = "payment")
+	@Column(name = "entity_name",nullable = false)
 	private String entityName;
 
 	@ApiModelProperty(notes = "entity_primary_key", example = "FILE")
-	@Column(name = "entity_primary_key",nullable = false, length = 200)
+	@Column(name = "entity_primary_key",nullable = false)
 	private String entityPrimaryKey;
 
-	@ApiModelProperty(notes = "created_by", example = "CSV")
-	@Column(name = "created_by",nullable = false, length = 200)
+	@ApiModelProperty(notes = "entity_template_id", example = "37504759")
+	@Column(name = "entity_template_id",nullable = false)
+	private Integer entityTemplateId;
+
+	@ApiModelProperty(notes = "created_by", example = "System")
+	@Column(name = "created_by",nullable = false)
 	private String createdBy;
 
-	@ApiModelProperty(notes = "updated_by", example = "FILE")
-	@Column(name = "updated_by",nullable = false, length = 200)
+	@ApiModelProperty(notes = "updated_by", example = "System")
+	@Column(name = "updated_by",nullable = false)
 	private String updatedBy;
 
-	@ApiModelProperty(notes = "created_date", example = "CSV")
-	@Column(name = "created_date",nullable = false, length = 200)
+	@ApiModelProperty(notes = "created_date", example = "2023-02-11 11:25:04")
+	@Column(name = "created_date",nullable = false)
 	private String createdDate;
 
-	@ApiModelProperty(notes = "updated_date", example = "CSV")
-	@Column(name = "updated_date",nullable = false, length = 200)
+	@ApiModelProperty(notes = "updated_date", example = "2023-02-11 11:25:04")
+	@Column(name = "updated_date",nullable = false)
 	private String updatedDate;
 
 	@ManyToOne

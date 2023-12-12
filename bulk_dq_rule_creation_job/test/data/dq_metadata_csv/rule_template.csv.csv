@@ -1,0 +1,13 @@
+dq_metric,rule_template_name,rule_template_desc,rule_template_id,created_by,created_date,updated_by,updated_date
+ACCURACY,SQL_VALIDATOR,Apply sql rule for accuracy metric,28946357,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+VALIDITY,SQL_VALIDATOR,Apply sql rule for validity metric,94904189,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+VALIDITY,CROSS_REFERENCE_VALUES_CHECK,Apply cross reference value check rule for validity metric,53015734,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+VALIDITY,RANGE_CHECK,Apply range check rule,47174533,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+VALIDITY,REFERENCE_VALUES_CHECK,Apply reference value check rule for validity metric,53268123,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+CONFORMITY,LENGTH_CHECK,Apply length check rule ,59221370,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+CONFORMITY,REGEX_CHECK,Apply regex check rule,89335282,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+CONFORMITY,WHOLE_NUMBER_CHECK,Apply whole number check rule,70598534,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+CONFORMITY,SQL_VALIDATOR,Apply sql rule for conformity metric,66276536,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+UNIQUENESS,UNIQUENESS_CHECK,Apply unique check rule,53138087,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+CONSISTENCY,DATA_DIFF,compare source and target entities,27611061,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15
+COMPLETENESS,NULL_CHECK,Apply null check rule,57467559,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15

@@ -12,9 +12,8 @@ import lombok.NoArgsConstructor;
 public class EntityTemplatePropertiesDto {
 
     private String entityTemplatePropDesc;
-
+    private String entityTemplatePropType;
     private String entityTemplatePropKey;
-
     private String isMandatory;
 
 }

@@ -1,0 +1,54 @@
+rule_template_prop_key,rule_template_prop_type,rule_template_prop_value,rule_template_prop_desc,is_mandatory,rule_template_prop_id,created_by,created_date,updated_by,updated_date,rule_template_id
+BASE_CRITERIA,PREDEFINED,round({BASE_CRITERIA_COLUMN}) <> {BASE_CRITERIA_COLUMN},Condition to be applied on the column,FALSE,95430871,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,70598534
+BASE_CRITERIA,PREDEFINED,"NOT REGEXP_LIKE({BASE_CRITERIA_COLUMN}, {REGEX})",Condition to be applied on the column,FALSE,17326550,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,89335282
+BASE_CRITERIA,PREDEFINED,{BASE_CRITERIA_COLUMN} NOT IN ({CROSS_REFERENCE_VALUES}),Condition to be applied on the column,FALSE,43644539,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53015734
+FILTER_CONDITIONS,VARIABLE,,filter condition to be applied on the table,FALSE,49677760,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53015734
+FILTER_CONDITIONS,VARIABLE,,filter condition to be applied on the table,FALSE,14997410,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,89335282
+FILTER_CONDITIONS,VARIABLE,,filter condition to be applied on the table,FALSE,63077980,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,70598534
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,17164295,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,47174533
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,57501064,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,70598534
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,57457411,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,57467559
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,14392146,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,89335282
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,16820606,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,94904189
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,55594871,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53138087
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,68897880,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53015734
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,74364821,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,66276536
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,89291702,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53268123
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,51148338,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,27611061
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,64510474,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,59221370
+THRESHOLD_PERCT,VARIABLE,,Threshold percentage that needs to be applied,FALSE,44912740,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,28946357
+REGEX,VARIABLE,,Condition to check if values present for given regex,FALSE,16953843,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,89335282
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which whole number check needs to be performed,FALSE,44714805,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,70598534
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which cross reference check needs to be performed,FALSE,55207086,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53015734
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which cross reference check needs to be performed,FALSE,11887061,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,89335282
+CROSS_REFERENCE_VALUES,VARIABLE,,SQL query for list of cross reference values for the base criteria column,FALSE,46526938,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53015734
+LOWER_LIMIT,VARIABLE,,RANGE_CHECK LOWER_LIMIT,TRUE,68902070,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,47174533
+UPPER_LIMIT,VARIABLE,,RANGE_CHECK UPPER_LIMIT,TRUE,45022646,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,47174533
+SOURCE_QUERY,VARIABLE,,source query for data comparator,TRUE,43891877,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,27611061
+TARGET_QUERY,VARIABLE,,target query for data comparator,TRUE,12979635,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,27611061
+SOURCE_QUERY,VARIABLE,,Apply sql rule for validity metric,TRUE,19003292,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,94904189
+COLUMN_VALUE_LENGTH,VARIABLE,,Standard length of the column value,TRUE,94867268,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,59221370
+BASE_CRITERIA,PREDEFINED,length({BASE_CRITERIA_COLUMN}) <> {COLUMN_VALUE_LENGTH},Condition to be applied on the column,TRUE,65361987,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,59221370
+BASE_CRITERIA,PREDEFINED,{BASE_CRITERIA_COLUMN} IS NULL or trim(cast ({BASE_CRITERIA_COLUMN} as STRING))= '',Condition to be applied on the column,TRUE,72386996,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,57467559
+BASE_CRITERIA,PREDEFINED,{BASE_CRITERIA_COLUMN} NOT IN ({REFERENCE_VALUES}),Condition to be applied on the column,TRUE,13935940,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53268123
+BASE_CRITERIA,PREDEFINED,group by {BASE_CRITERIA_COLUMN} having count({BASE_CRITERIA_COLUMN}) >1,Condition to be applied on the column,TRUE,30947353,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53138087
+BASE_CRITERIA,PREDEFINED,NOT({BASE_CRITERIA_COLUMN} BETWEEN {LOWER_LIMIT} AND {UPPER_LIMIT}),Condition to be applied on the column,TRUE,20123738,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,47174533
+FILTER_CONDITIONS,VARIABLE,,filter condition to be applied on the table,TRUE,73073770,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53268123
+FILTER_CONDITIONS,VARIABLE,,filter condition to be applied on the table,TRUE,77609053,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,47174533
+FILTER_CONDITIONS,VARIABLE,,filter condition to be applied on the table,TRUE,78239968,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53138087
+FILTER_CONDITIONS,VARIABLE,,filter condition to be applied on the table,TRUE,11628190,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,57467559
+FILTER_CONDITIONS,VARIABLE,,filter condition to be applied on the table,TRUE,89850260,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,59221370
+SOURCE_QUERY,VARIABLE,,source query to apply rule on source entity,TRUE,38449931,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,66276536
+SOURCE_QUERY,VARIABLE,,source query to apply rule on source entity,TRUE,69614626,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,28946357
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which null check needs to be performed,TRUE,73177112,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,57467559
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which null check needs to be performed,TRUE,16598484,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,28946357
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which null check needs to be performed,TRUE,24749807,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,66276536
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which null check needs to be performed,TRUE,51044320,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,94904189
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which range check needs to be performed,TRUE,90944341,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,47174533
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which length check needs to be performed,TRUE,46147431,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,59221370
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which reference check needs to be performed,TRUE,59052510,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53268123
+REFERENCE_VALUES,VARIABLE,,List of reference values for the base criteria column,TRUE,61218995,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53268123
+BASE_CRITERIA_COLUMN,VARIABLE,,Column on which uniqueness check needs to be performed,TRUE,64821703,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,53138087
+FILTER_CONDITIONS,VARIABLE,,Condition to be get data on which rule needs to applied,TRUE,53940812,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,94904189
+FILTER_CONDITIONS,VARIABLE,,Condition to be get data on which rule needs to applied,TRUE,83377235,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,66276536
+FILTER_CONDITIONS,VARIABLE,,Condition to be get data on which rule needs to applied,TRUE,59440868,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,28946357

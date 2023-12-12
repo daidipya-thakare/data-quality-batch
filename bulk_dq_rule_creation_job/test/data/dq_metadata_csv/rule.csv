@@ -1,0 +1,21 @@
+rule_id,ruleset_id,rule_template_id,rule_name,rule_desc,created_by,created_date,updated_by,updated_date
+68640425,16853437,59221370,account.accountnumber.LENGTH_CHECK,Account number length is not 18 digits,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+69415045,16853437,94904189,bank.bankcode.sql_validator,Bank code is not among BARC and HSBC,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+73716020,16853437,94904189,payments.transaction_date.sql_validator,Transaction date is not future date,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+71667655,16853437,47174533,account.creditlimit.range_check,Credit limit is in range 60000 to 70000,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+70423734,16853437,70598534,payments.transaction_amount.whole_number_check,Transaction Amount should be whole number,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+20042999,16853437,53268123,account.CreditOnHold.REFERENCE_VALUES_CHECK,Credit on hold has valid boolean values,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+32352474,16853437,53268123,payments.Payment_Type.REFERENCE_VALUES_CHECK,Payment Type is not wired for cash and cheque payment method,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+59945567,16853437,53138087,account.accountid.uniqueness_check,Account id is unique,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+38068722,16853437,53138087,bank.bankid.uniqueness_check,Bank Id should be unique,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+61654907,16853437,53138087,payments.Transaction_Identifier.uniqueness_check,Transaction Identifier is unique,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+16344967,16853437,57467559,account.ENTITYIMAGEID.null_check,Entity image id should not be null,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+71667257,16853437,57467559,bank.name.null_check,Bank name should not be null,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+84797199,16853437,57467559,payments.cheque_number.null_check,Cheque number should not be null for cheque payment method,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+13255409,16853437,57467559,payments.transaction_date.null_check,Transaction date should not be null,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+68661501,16853437,27611061,payments.data_diff,Compare payment source and target data,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+20261604,16853437,28946357,bank.postalcode.sql_validator,Postal code length is not 5 digits,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+67862436,16853437,28946357,payments.cheque_number.sql_validator,Cheque number is not populated for payment methods other than cheque,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+70396565,16853437,53015734,payments.transaction_currency.cross_reference_values_check,Transaction currency should be within set of debit currency values,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+99049158,16853437,66276536,payments.cheque_number.sql_validator,Cheque number is 6 digits long,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21
+60258846,16853437,89335282,payments.transaction_date.regex_check,Transaction Date should be in yyyy-mm-dd format,sys,11/2/2023 11:31:21,sys,11/2/2023 11:31:21

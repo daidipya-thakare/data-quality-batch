@@ -1,6 +1,6 @@
 package com.cv.dataqualityapi.service.impl;
 
-import com.cv.dataqualityapi.Repo.EntityTemplatePropertiesRepo;
+import com.cv.dataqualityapi.repository.EntityTemplatePropertiesRepo;
 import com.cv.dataqualityapi.model.EntityTemplateProperties;
 import com.cv.dataqualityapi.service.EntityTemplatePropertiesService;
 import org.springframework.beans.factory.annotation.Autowired;
