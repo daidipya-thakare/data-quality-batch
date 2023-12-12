@@ -11,12 +11,12 @@ const entityToDescriptionsItems = (entity: IEntity): DescriptionsProps['items'] 
     {
       key: '2',
       label: 'Entity Type',
-      children: formatString(entity.entity_type),
+      children: formatString(entity.type),
     },
     {
       key: '1',
       label: 'Entity SubType',
-      children: formatString(entity.entity_subtype),
+      children: formatString(entity.subType),
     },
     {
       key: '3',

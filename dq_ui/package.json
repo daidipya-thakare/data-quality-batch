@@ -1,5 +1,6 @@
 {
   "name": "innersource-dq",
+  "proxy": "http://localhost:8080",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +20,8 @@
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "uuid": "^9.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "axios": "^0.21.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -50,4 +52,5 @@
     "prettier": "3.0.3",
     "sass": "^1.69.5"
   }
+  
 }

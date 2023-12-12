@@ -6,6 +6,10 @@ import { formatString } from '../../common/utilities/utils';
 import NiceModal from '@ebay/nice-modal-react';
 import { IEntity, IEntityTemplate } from '../../interfaces';
 import EntityDetailsModal from '../../components/EntityDetails/EntityDetailsModal';
+import entityJsonData from '../../data/entity.json';
+import { baseUrl } from "../../constants/apiConstants";
+import { axiosApiInstance } from "../../common/utilities/axiosInterceptors";
+
 
 const { Text } = Typography;
 
@@ -15,12 +19,37 @@ const Entity = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
-    // Load saved enttities from localStorage
-    const savedData = localStorage.getItem('entities');
-    if (savedData) {
-      setData(JSON.parse(savedData));
-    }
+    localStorage.setItem('entities', JSON.stringify(entityJsonData));
   }, []);
+
+  useEffect(() => {
+    getAllEntities();
+  }, []);
+
+  const getAllEntities = () => {
+
+    axiosApiInstance
+      .get(`${baseUrl}entity/all`)
+      .then((res) => {
+        if (res.status === 200) {
+          console.log("res.data.response.body >", res.data);
+          setData(res.data);
+        } else {
+          console.error("Error, fetching workflow");
+        }
+      });
+  };
+
+
+  
+  // useEffect(() => {
+  //   // Load saved enttities from localStorage
+
+  //   const savedData = localStorage.getItem('entities');
+  //   if (savedData) {
+  //     setData(JSON.parse(savedData));
+  //   }
+  // }, []);
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -71,13 +100,13 @@ const Entity = () => {
     },
     {
       title: 'Entity Type',
-      dataIndex: 'entity_type',
+      dataIndex: 'type',
       key: 'entity_type',
       render: (type: string) => formatString(type),
     },
     {
       title: 'Entity SubType',
-      dataIndex: 'entity_subtype',
+      dataIndex: 'subType',
       key: 'entity_subtype',
       render: (subtype: string) => formatString(subtype),
     },

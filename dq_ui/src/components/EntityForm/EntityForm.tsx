@@ -49,6 +49,34 @@ const EntityForm = (props: EntityFormProps) => {
     form.resetFields();
   };
 
+  const handleEntityTypeChange = (value: string) => {
+    // Clear existing properties
+    form.setFieldsValue({ properties: [] });
+
+    // Find the corresponding entity_sub_type for the selected entity_type
+    const entityType = ENTITY_TEMPLATES.find(template => template.entity_subtype === value)
+      ?.entity_type;
+
+    // If an entity_type is found, set it in the form
+    if (entityType) {
+      form.setFieldsValue({ entity_type: entityType });
+
+      // Filter the JSON data for properties based on the selected subtype
+      const filteredProps = ENTITY_TEMPLATE_PROPERTIES.filter(
+        prop => prop.entity_type === entityType
+      );
+
+      // Set the new properties on the form
+      const newProperties = filteredProps.map(prop => ({
+        propertyName: prop.entity_template_prop_key,
+        propertyValue: '', // Leave value empty
+        propertyType: prop.entity_template_prop_type,
+        isMandatory: prop.is_mandatory,
+      }));
+
+      form.setFieldsValue({ properties: newProperties });
+    }
+  };
   const handleEntitySubTypeChange = (value: string) => {
     // Clear existing properties
     form.setFieldsValue({ properties: [] });
@@ -105,6 +133,23 @@ const EntityForm = (props: EntityFormProps) => {
   return (
     <Form layout='vertical' form={form} name='entityForm' onFinish={handleSubmit}>
       <Row gutter={16}>
+      <Col span={12}>
+          <Form.Item
+            name='entity_ype'
+            label='Entity Type'
+            rules={[
+              {
+                required: true,
+                message: 'Entity Type is required',
+              },
+            ]}
+          >
+            <Select onChange={value => handleEntityTypeChange(value)}>
+              {generateGroupedOptions(ENTITY_TEMPLATES)}
+            </Select>
+          </Form.Item>
+          <Form.Item name='entity_type' hidden />
+        </Col>
         <Col span={12}>
           <Form.Item
             name='entity_subtype'
@@ -122,6 +167,7 @@ const EntityForm = (props: EntityFormProps) => {
           </Form.Item>
           <Form.Item name='entity_type' hidden />
         </Col>
+        
       </Row>
       <Row gutter={16}>
         <Col span={12}>

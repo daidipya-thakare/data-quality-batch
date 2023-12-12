@@ -15,11 +15,11 @@ export interface IEntityProperty {
     propertyType: string;
     isMandatory: boolean;
   }
-  
+
   export interface IEntity {
     isDraft: any;
-    entity_subtype: string;
-    entity_type: string;
+    subType: string;
+    type: string;
     entityName: string;
     entityPhysicalName: string;
     primaryKey: string;
