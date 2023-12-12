@@ -1,3 +1,3 @@
 entity_template_prop_key,entity_template_prop_desc,entity_template_prop_type,is_mandatory,entity_template_prop_id,created_by,created_date,updated_by,updated_date,entity_template_id
-PATH,Location of the data file,VARIABLE,TRUE,58664835,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,77545414
-PATH,Location of the data file,VARIABLE,TRUE,58664836,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,77545415
+PATH,Location of the csv file,VARIABLE,TRUE,58664835,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,77545414
+PATH,Location of the parquet file,VARIABLE,TRUE,58664836,sys,2023-11-02 11:13:15,sys,2023-11-02 11:13:15,77545415
